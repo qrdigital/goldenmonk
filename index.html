@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Monk - Alulosa Premium</title>
+<link rel="icon" href="favicon.png" type="image/png">    
+    <style>
+        :root {
+            --primary: #1b5e20;
+            --accent: #c6a700;
+            --bg: #ffffff;
+            --light-green: #f1f8e9;
+        }
+
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            margin: 0; color: #333; line-height: 1.6; background-color: #f4f4f4;
+        }
+
+        .container { max-width: 480px; margin: auto; background: white; padding-bottom: 140px; min-height: 100vh; }
+        
+        header { background: var(--primary); color: white; padding: 25px 20px; text-align: center; }
+        .hero-img { width: 100%; height: auto; display: block; }
+
+        .section { padding: 30px 20px; }
+        
+        h1 { font-size: 26px; color: var(--primary); margin-bottom: 15px; line-height: 1.2; font-weight: 800; }
+        h2 { font-size: 20px; color: var(--primary); border-left: 4px solid var(--accent); padding-left: 12px; margin-bottom: 15px; }
+
+        /* Bloque Empático Reforzado */
+        .empathy-box { background: var(--light-green); border-radius: 12px; padding: 20px; margin: 15px 0; border: 1px solid #e1eedb; }
+
+        /* Tabla Comparativa */
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .comparison-table th { background: #eee; padding: 12px; text-align: left; }
+        .comparison-table td { padding: 12px; border-bottom: 1px solid #eee; }
+        .row-winner { background: #e8f5e9; font-weight: bold; }
+
+        /* Packs de Selección */
+        .pack-card { 
+            border: 2px solid #eee; border-radius: 15px; padding: 20px; 
+            margin-bottom: 15px; display: flex; justify-content: space-between; 
+            align-items: center; cursor: pointer; transition: 0.2s;
+        }
+        .pack-card.selected { border-color: var(--primary); background: var(--light-green); }
+        .price-tag { font-size: 22px; font-weight: bold; color: var(--primary); }
+
+        /* Info Delivery Separada */
+        .delivery-info { 
+            background: #fff8e1; border: 1px solid #ffe082; padding: 15px; 
+            border-radius: 10px; font-size: 14px; margin-top: 10px;
+        }
+
+        #cta-fijo {
+            position: fixed; bottom: 0; width: 100%; max-width: 480px;
+            background: white; padding: 20px; box-sizing: border-box; 
+            border-top: 1px solid #eee; z-index: 1000;
+        }
+        .btn-whatsapp {
+            background: #25D366; color: white; text-align: center; padding: 18px;
+            border-radius: 14px; font-weight: bold; border: none; width: 100%; 
+            font-size: 18px; cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div style="font-weight: bold; letter-spacing: 2px; font-size: 14px;">GOLDEN MONK</div>
+    </header>
+
+    <img src="alulosa-hero.jpg" class="hero-img" style="width: 30%; height: auto; display: block; margin: 20px auto;" alt="Alulosa Pura">
+
+    <!-- SECCIÓN 1: EMPATÍA (Regresamos al texto original) -->
+    <div class="section">
+        <h1>Sabemos por qué estás aquí...</h1>
+        <p>Porque quieres cuidar tu salud sin que tu café sepa a medicina, sin que tus postres queden secos y, sobre todo, sin renunciar al placer de lo dulce.</p>
+        
+        <div class="empathy-box">
+            <p style="margin:0;">Buscas algo real. No una "Stevia" de supermercado mezclada con rellenos químicos, sino un aliado que te permita disfrutar sin culpa.</p>
+        </div>
+    </div>
+
+    <!-- SECCIÓN 2: COMPARATIVA (Sentido Crítico) -->
+    <div class="section" style="background: #fafafa;">
+        <h2>Duelo de Endulzantes</h2>
+        <p style="font-size: 14px;">La Panela y el azúcar refinada disparan tu glucosa. La Alulosa es una molécula que tu cuerpo no metaboliza.</p>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Opción</th>
+                    <th>Calorías</th>
+                    <th>Glucosa</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Azúcar / Panela</td>
+                    <td style="color:red">Altas</td>
+                    <td style="color:red">Pico Alto</td>
+                </tr>
+                <tr>
+                    <td>Stevia Comercial</td>
+                    <td style="color:orange">Con Rellenos</td>
+                    <td style="color:orange">Inestable</td>
+                </tr>
+                <tr class="row-winner">
+                    <td>Alulosa Golden Monk</td>
+                    <td style="color:green">0%</td>
+                    <td style="color:green">0% Impacto</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- SECCIÓN 3: REPOSTERÍA -->
+    <div class="section">
+        <h2>👩‍🍳 El secreto de tu cocina</h2>
+        <p>La Alulosa es el único sustituto que <strong>carameliza</strong>. Logra ese dorado perfecto y la esponjosidad que tu familia merece, cuidando su bienestar.</p>
+    </div>
+
+    <!-- SECCIÓN 4: SELECCIÓN DE PACKS -->
+    <div class="section">
+        <h2>Elige tu pack:</h2>
+        
+        <div class="pack-card" onclick="select(1, 'Pack Inicio (1 ud)', 20, this)">
+            <div><strong>1 Pack 250g</strong><br><small>Para probar el cambio</small></div>
+            <div class="price-tag">S/ 20</div>
+        </div>
+
+        <div class="pack-card selected" onclick="select(2, 'Pack Bienestar (2 uds)', 35, this)">
+            <div><strong>2 Packs</strong><br><small>Ahorras S/ 5.00</small></div>
+            <div class="price-tag">S/ 35</div>
+        </div>
+
+        <div class="pack-card" onclick="select(4, 'Pack Repostería (4 uds)', 65, this)">
+            <div><strong>4 Packs</strong><br><small>Ahorras S/ 15.00</small></div>
+            <div class="price-tag">S/ 65</div>
+        </div>
+
+        <div class="delivery-info">
+            📍 <strong>Delivery:</strong> S/ 10.00 en Lima.<br>
+            🚛 Envíos a provincias según tarifa de agencia.
+        </div>
+    </div>
+</div>
+
+<div id="cta-fijo">
+    <button class="btn-whatsapp" onclick="send()">
+        Pedir mi Pack: <span id="val-pack">S/ 35.00</span>
+    </button>
+</div>
+
+<script>
+    let p = {n: 'Pack Bienestar (2 uds)', v: 35};
+
+    function select(qty, name, val, el) {
+        p = {n: name, v: val};
+        document.querySelectorAll('.pack-card').forEach(c => c.classList.remove('selected'));
+        el.classList.add('selected');
+        // Solo mostramos el valor del pack, el delivery se menciona aparte
+        document.getElementById('val-pack').innerText = `S/ ${val.toFixed(2)}`;
+    }
+
+    function send() {
+        const msg = `¡Hola Golden Monk! 🧘‍♂️\n\nQuiero el *${p.n}* (S/ ${p.v}).\n\nPor favor, confímenme el total con el envío a mi zona.`;
+        window.open(`https://wa.me/51990582170?text=${encodeURIComponent(msg)}`, '_blank');
+    }
+</script>
+
+</body>
+</html>
